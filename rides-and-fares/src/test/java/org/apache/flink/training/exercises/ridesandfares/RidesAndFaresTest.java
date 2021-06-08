@@ -50,7 +50,6 @@ public class RidesAndFaresTest extends TaxiRideTestBase<Tuple2<TaxiRide, TaxiFar
 		List<Tuple2<TaxiRide, TaxiFare>> expected = Arrays.asList(
 				Tuple2.of(ride1, fare1),
 				Tuple2.of(ride2, fare2));
-
 		assertThat("Join results don't match", results(rides, fares), containsInAnyOrder(expected.toArray()));
 	}
 
@@ -62,7 +61,6 @@ public class RidesAndFaresTest extends TaxiRideTestBase<Tuple2<TaxiRide, TaxiFar
 		List<Tuple2<TaxiRide, TaxiFare>> expected = Arrays.asList(
 				Tuple2.of(ride1, fare1),
 				Tuple2.of(ride2, fare2));
-
 		assertThat("Join results don't match", results(rides, fares), containsInAnyOrder(expected.toArray()));
 	}
 
@@ -76,7 +74,7 @@ public class RidesAndFaresTest extends TaxiRideTestBase<Tuple2<TaxiRide, TaxiFar
 	}
 
 	protected List<?> results(TestRideSource rides, TestFareSource fares) throws Exception {
-		Testable javaSolution = () -> RidesAndFaresSolution.main(new String[]{});
+		Testable javaSolution = () -> RidesAndFaresExercise.main(new String[]{});
 		return runApp(rides, fares, new TestSink<>(), JAVA_EXERCISE, javaSolution);
 	}
 
