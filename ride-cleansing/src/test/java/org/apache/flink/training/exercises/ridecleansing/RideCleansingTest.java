@@ -60,7 +60,7 @@ public class RideCleansingTest extends TaxiRideTestBase<TaxiRide> {
 	}
 
 	protected List<?> results(TestRideSource source) throws Exception {
-		Testable javaSolution = () -> RideCleansingSolution.main(new String[]{});
+		Testable javaSolution = () -> RideCleansingExercise.main(new String[]{});
 		return runApp(source, new TestSink<>(), JAVA_EXERCISE, javaSolution);
 	}
 
