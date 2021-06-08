@@ -85,7 +85,7 @@ public class RidesAndFaresExercise extends ExerciseBase {
 			if (fare != null) {
 				if (fare.rideId == ride.rideId) {
 					out.collect(Tuple2.of(ride, fare));
-					fareState.update(null);
+					fareState.clear();
 					return;
 				}
 			}
@@ -98,7 +98,7 @@ public class RidesAndFaresExercise extends ExerciseBase {
 			if (ride != null) {
 				if(ride.rideId == fare.rideId) {
 					out.collect(Tuple2.of(ride, fare));
-					rideState.update(null);
+					rideState.clear();
 					return;
 				}
 			}
