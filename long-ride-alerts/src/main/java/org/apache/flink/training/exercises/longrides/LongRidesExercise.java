@@ -77,6 +77,7 @@ public class LongRidesExercise extends ExerciseBase {
 			// end ride
 			if (!ride.isStart) {
 				final TaxiRide rideState = state.value();
+				// out of order. end before start
 				if (rideState == null) {
 					state.update(ride);
 				} else {
@@ -87,6 +88,7 @@ public class LongRidesExercise extends ExerciseBase {
 			}
 			// start ride
 			final TaxiRide rideState = state.value();
+			// out of order. end before start
 			if (rideState != null) {
 				if (rideState.endTime.toEpochMilli() - ride.startTime.toEpochMilli() > TIMEOUT) {
 					out.collect(ride);
